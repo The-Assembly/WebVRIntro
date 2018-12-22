@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Universe</title>
+    <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+</head>
+
+<body>
+    <a-scene>
+
+        <a-sphere src="/Textures_8k/mercury.jpg" position="-25.18214 0 15.58828" color="fff" id="mercury" rotation="0 690.7000000000885 0" material="" geometry=""></a-sphere>
+
+        <a-sphere src="/Textures_8k/venus_surface.jpg" position="-53.28699 0 -4.02598" color="fff" scale="1.2 1.2 1.2" id="venus" rotation="0 874.9000000001304 0" material="" geometry=""></a-sphere>
+
+        <a-sphere src="/Textures_8k/earth_day.jpg" position="-80.23679 0 -37.60785" color="fff" scale="1.5 1.5 1.5" id="earth" rotation="0 947.2000000001469 0" material="" geometry="" cursor="fuse:true" raycaster="">
+            <!-- <a-animation begin="click" attribute="position" from="-6.7425342421594365 0 -28.63436834906885" to="6.7425342421594365 0 -28.63436834906885"
+                dur="5000" repeat="indefinite" direction="alternate" easing="linear"></a-animation> -->
+        </a-sphere>
+
+        <a-sphere src="/Textures_8k/mars.jpg" position="-6.28407 0 -78.21264" color="fff" id="mars" rotation="0 1281.39999999993 0" material="" geometry=""></a-sphere>
+
+        <a-sphere src="/Textures_8k/jupiter_1.jpg" position="-123.24171 0 -67.26189" color="fff" scale="12 12 12" id="jupiter" rotation="0 1370.1999999998493 0" material="" geometry=""></a-sphere>
+
+        <a-sphere src="/Textures_8k/saturn.jpg" position="1.82049 0 72.11439" color="fff" scale="2.5 2.5 2.5" id="saturn" rotation="0 1466.4999999997617 0" material="" geometry=""></a-sphere>
+
+        <a-sphere src="/Textures_8k/uranus.jpg" position="-51.17746 0 47.8488" color="fff" scale="1.2 1.2 1.2" id="uranus" rotation="0 1541.999999999693 0" material="" geometry=""></a-sphere>
+
+        <a-sphere src="/Textures_8k/neptune.jpg" position="75.77672 0 29.70942" color="fff" scale="1.5 1.5 1.5" id="neptune" rotation="0 1602.499999999638 0" material="" geometry=""></a-sphere>
+
+        <a-sphere src="/Textures_8k/pluto.jpg" position="45.87428 0 -30.67036" color="fff" scale="0.8 0.8 0.8" id="pluto" rotation="0 1656.7999999995889 0" material="" geometry=""></a-sphere>
+
+
+        <a-sky src="/Textures_8k/stars_milky_way.jpg"></a-sky>
+
+
+        <a-camera position="0 0 0" id="camera">
+            <a-cursor color="#fff" position="0 0 -1"></a-cursor>
+        </a-camera>
+
+
+    </a-scene>
+</body>
+
+<script>
+    var mercury = document.getElementById('mercury');
+    var venus = document.getElementById('venus');
+    var earth = document.getElementById('earth');
+    var mars = document.getElementById('mars');
+    var jupiter = document.getElementById('jupiter');
+    var saturn = document.getElementById('saturn');
+    var uranus = document.getElementById('uranus');
+    var neptune = document.getElementById('neptune');
+    var pluto = document.getElementById('pluto');
+    var arot = '';
+    var brot = '';
+    var crot = '';
+    var drot = '';
+    var erot = '';
+    var frot = '';
+    var grot = '';
+    var hrot = '';
+    var irot = '';
+    var a = 0;
+    var b = 0;
+    var c = 0;
+    var d = 0;
+    var e = 0;
+    var f = 0;
+    var g = 0;
+    var h = 0;
+    var i = 0;
+    function rotate() {
+        a += 0.1;
+        b += 0.1;
+        c += 0.7;
+        d += 0.1;
+        e += 0.3;
+        f += 0.1;
+        g += 0.1;
+        h += 0.1;
+        i += 0.1;
+        arot = `0 ${a} 0`;
+        brot = `0 ${b} 0`;
+        crot = `0 ${c} 0`;
+        drot = `0 ${d} 0`;
+        erot = `0 ${e} 0`;
+        frot = `0 ${f} 0`;
+        grot = `0 ${g} 0`;
+        hrot = `0 ${h} 0`;
+        irot = `0 ${i} 0`;
+        mercury.setAttribute('rotation', arot);
+        venus.setAttribute('rotation', brot);
+        earth.setAttribute('rotation', crot);
+        mars.setAttribute('rotation', drot);
+        jupiter.setAttribute('rotation', erot);
+        saturn.setAttribute('rotation', frot);
+        uranus.setAttribute('rotation', grot);
+        neptune.setAttribute('rotation', hrot);
+        pluto.setAttribute('rotation', irot);
+        window.requestAnimationFrame(rotate)
+    }
+    window.requestAnimationFrame(rotate);
+
+    function getpos(){
+        
+    }
+
+    // Rijin's Code
+    // var camera = document.getElementById('camera');
+    // var camx = 0; 
+    // var camy = 0; 
+    // var camz = 0;  
+    // function moveCamera(){
+    //     camera.setAttribute('position', `0 0 ${-camz}`);
+    //     if(camx > -0.1 && camx < 0.4 && camy > -0.9 && camy < 0.3) {
+    //         camz+=0.1; 
+    //         window.requestAnimationFrame(moveCamera);
+    //     }
+    // }
+    window.requestAnimationFrame(moveCamera);
+
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script>
+
+</html>

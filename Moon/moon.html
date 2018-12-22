@@ -1,0 +1,58 @@
+<html>
+
+<head>
+    <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+</head>
+
+<body>
+    <a-scene>
+        <a-sphere id="earth" src="earth_night.jpg" color="#fff" position="0 1 -2.5" rotation="-8 218 -30" scale="2 2 2"></a-sphere>
+
+        <a-sphere id="moon" src="moon.jpg" position="6.5 0 -12" rotation="0 0 0" scale="1 1 1"></a-sphere>
+
+        <a-sky src="dark_universe1.jpg" scale="0.5 0.5 0.5"></a-sky>
+        <a-camera position="0 1 2"></a-camera>
+
+        <a-entity id="camera" position="0 2.6 0" camera look-controls>
+            <a-cursor color="000"></a-cursor>
+        </a-entity>
+    </a-scene>
+</body>
+
+<script>
+        var earth = document.getElementById('earth');
+        var moon = document.getElementById("moon");
+        var y = 218;
+        var z = 0;
+        function rotate(){
+            y+=0.05;
+            z+=0.2;
+            crot = `0  ${y} -10`;
+            drot = `0  ${-z} 0`;
+            earth.setAttribute('rotation', crot);
+            moon.setAttribute('rotation', drot);
+            window.requestAnimationFrame(rotate)
+        }
+        window.requestAnimationFrame(rotate)
+
+        // TRIAL
+        function forward_test(){
+            var cpos = '0 0 0';
+            var move = 0;
+            var cam = document.getElementById('camera');
+            cam.setAttribute('position', `0 0 ${move}`);
+            move+=-0.1;
+            window.requestAnimationFrame(forward_test);
+        }
+
+        window.requestAnimationFrame(forward_test);
+    </script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script>
+$(document).ready(function(){
+$('body').find('IMG[src="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png"]').remove();
+});
+</script>
+</html>

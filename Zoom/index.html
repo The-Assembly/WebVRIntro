@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Text</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="main.css">
+
+</head>
+
+<script src="https://aframe.io/releases/0.8.0/aframe.min.js"> </script>
+
+<body>
+    <a-scene>
+        <a-sphere id="earth" src="earth_night.jpg" color="#fff" position="0 1.65 -1.8089667052486558" rotation="-22 218 -15" scale="1 1 1" material="" geometry=""></a-sphere>
+        <a-plane position="0 2 -5" rotaion="0 0 0" width="16" height="9" scale="10 10 10" src="dark_space_UHD.jpg"></a-plane>
+        <a-circle radius="2.65" position="0 2.016 -0.2359738938631768" rotaion="0 0 0" width="9" height="9" scale="2.5 2.5 3" src="space.png" material="" geometry="radius:2"></a-circle>
+        <a-sphere id="blackhole" position="0 2 0" scale="5 5 5" src="space.png"></a-sphere>
+    </a-scene>
+
+<script>
+
+    // var blackhole = document.getElementById('blackhole');
+    // var drot = '22 208 15'; 
+    // var z = 218; 
+    // function rotate1(){
+    //     z+= -0.3; 
+    //     drot = `0 ${z} 0`;
+    //     blackhole.setAttribute('rotation', drot);
+    //     window.requestAnimationFrame(rotate1)
+    // }
+    // window.requestAnimationFrame(rotate)
+
+    var earth = document.getElementById('earth');
+    var crot = ''; 
+    var y = 0; 
+    // var y1 = 2; 
+    // var y2 = 2; 
+    function rotate(){
+        y+=0.3; 
+        // y1+=0.3; 
+        // y2-=0.3; 
+        crot = `${0} ${y} ${0}`;
+        earth.setAttribute('rotation', crot);
+        window.requestAnimationFrame(rotate)
+    }
+    window.requestAnimationFrame(rotate)
+</script>
+    
+</body>
+</html>
